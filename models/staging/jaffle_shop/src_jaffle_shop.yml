@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: This a clon of external database
     database: RAW
     schema: jaffle_shop
     freshness: 
@@ -10,7 +11,21 @@ sources:
     loaded_at_field: _etl_loaded_at
     tables:
       - name: customers
+        description: This a raw customer data
+        columns:
+          - name: id
+            description: This is a primary key of customers
+            tests:
+              - unique
+              - not_null
         freshness: null
       - name: orders
+        description: This is a raw orders data
+        columns:
+          - name: id
+            description: This is a primary key of orders
+            tests:
+              - unique
+              - not_null
         
         
