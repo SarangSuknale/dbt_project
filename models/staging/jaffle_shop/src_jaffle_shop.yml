@@ -5,9 +5,6 @@ sources:
     description: This a clon of external database
     database: RAW
     schema: jaffle_shop
-    freshness: 
-          error_after: {count: 2, period: day}
-          warn_after: {count: 12, period: day}
     loaded_at_field: _etl_loaded_at
     tables:
       - name: customers
@@ -18,7 +15,6 @@ sources:
             tests:
               - unique
               - not_null
-        freshness: null
       - name: orders
         description: This is a raw orders data
         columns:
