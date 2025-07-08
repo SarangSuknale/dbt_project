@@ -1,0 +1,33 @@
+
+# semantic_models:
+#   - name: order_metrics
+#     model: ref('fct_orders')
+#     description: Creating measures and metrics of fct_orders table
+     
+#     entities:
+#       - name: order_id
+#         type: primary
+#       - name: customer_id
+#         type: foreign
+
+#     dimensions:
+#       - name: order_date
+#         type: time
+#         type_params:
+#           time_granularity: day
+    
+#     measures:
+#       - name: total_amount
+#         label: Total amount by customers
+#         agg: sum
+#         expr: amount
+#         description: Total amount
+#       - name: avg_amount
+#         agg: average
+#         description: average amount by each customer
+#         expr: amount
+#       - name: total_revenue
+#         agg: sum
+#         expr: amount
+#         description: Total revenue by summing all amount
+    
