@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_super_store__customers
+    description: This is the customer model
+    columns:
+      - name: customer_id
+        description: This is the primary key
+        tests:
+          - not_null
+          - unique
+  
+  - name: stg_super_store__products
+    description: This is the product model
+    columns:
+      - name: product_id
+        description: This is the primary key
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_super_store__orders
+    description: This is the orders model
+    columns:
+      - name: order_id
+        description: This is the unique key 
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: This is the foreign key from customer table
+        tests:
+          - relationships:
+              to: ref('stg_super_store__customers')
+              field: customer_id
+      - name: product_id
+        description: This the the foreign key from product table
+        tests:
+          - relationships:
+              to: ref('stg_super_store__products')
+              field: product_id

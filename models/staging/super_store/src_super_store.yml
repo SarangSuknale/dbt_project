@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: super_store
+    description: This is the source of super store data
+    tables:
+      - name: customers
+        description: This table conatins all details about customers
+        columns:
+          - name: cust_id
+            tests:
+              - unique
+              - not_null
+      - name: products
+        description: This table contains all details about products
+        columns:
+          - name: prod_id
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        description: This table conatains order details
+        columns:
+          - name: order_id
+            tests:
+              - unique
+              - not_null
+          # - name: customer_id
+          #   description: This is the foreign key from customer table
+          #   tests:
+          #     - relationships:
+          #          to: ref('stg_super_store__customers')
+          #          field: customer_id
+          # - name: product_id
+          #   description: This is the foreign key from products table
+          #   tests:
+          #     - relationships:
+          #          to: ref('stg_super_store__products')
+          #          field: product_id
